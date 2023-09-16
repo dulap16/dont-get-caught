@@ -19,10 +19,9 @@ public class Kissers : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            areKissing = true;
-
+            kissing();
         }
-        else areKissing = false;
+        else stoppedKissing();
     }
 
     private void setColor(Color c)
