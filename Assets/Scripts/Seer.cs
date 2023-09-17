@@ -18,6 +18,29 @@ public class Seer : MonoBehaviour
     public float seeingTime = 2;
     [SerializeField] private AnimationCurve _curve;
 
+    IEnumerator WaitUntilWarning(float seconds)
+    {
+        
+        yield return new WaitForSeconds(seconds);
+
+        nextWarningTime = calculateNextWarningTime();
+        StartWarning();
+    }
+
+    IEnumerator WaitUntilStartSeeing(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        StartSeeing();
+    }
+
+    IEnumerator WaitUntilStopSeeing(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        StopSeeing();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
