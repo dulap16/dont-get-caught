@@ -7,6 +7,17 @@ public class Seer : MonoBehaviour
     
     [SerializeField] private int state = 0; // 0 - idle, 1 - warning, 2 - seeing
 
+    [SerializeField] private Manager manager;
+    private SpriteRenderer sr;
+
+    [SerializeField] private float timeBetweenSees = 5;
+
+    [SerializeField] private float initialWarningTime;
+    private float nextWarningTime;
+
+    public float seeingTime = 2;
+    [SerializeField] private AnimationCurve _curve;
+
     // Start is called before the first frame update
     void Start()
     {
