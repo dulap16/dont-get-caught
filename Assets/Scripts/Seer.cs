@@ -44,7 +44,10 @@ public class Seer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        sr = GetComponent<SpriteRenderer>();
+        nextWarningTime = initialWarningTime;
+
+        StopSeeing();
     }
 
     private void StartWarning()
