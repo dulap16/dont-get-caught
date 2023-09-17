@@ -74,6 +74,12 @@ public class Seer : MonoBehaviour
         StartCoroutine(WaitUntilWarning(timeBetweenSees));
     }
 
+    private float calculateNextWarningTime()
+    {
+        Debug.Log(manager.getPercentageDone());
+        return initialWarningTime * _curve.Evaluate(manager.getPercentageDone());
+    }
+
     public bool isIdle()
     {
         return state == 0;
