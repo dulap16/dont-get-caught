@@ -30,4 +30,11 @@ public class Manager : MonoBehaviour
             }
         }
     }
+
+    public float getPercentageDone()
+    {
+        if (currentProgress == 0)
+            return 0;
+        return finish / currentProgress;
+    }
 }
