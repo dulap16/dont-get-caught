@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Seer : MonoBehaviour
 {
+    
+    [SerializeField] private int state = 0; // 0 - idle, 1 - warning, 2 - seeing
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,18 @@ public class Seer : MonoBehaviour
     void Update()
     {
         
+    public bool isIdle()
+    {
+        return state == 0;
+    }
+
+    public bool isWarning()
+    {
+        return state == 1;
+    }
+
+    public bool isSeeing()
+    {
+        return state == 2;
     }
 }
